@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-img {
+  width: 200px;
+}
+
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  margin-left: 20px;
+}
+
+.celestial-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  float: left;
+  margin-right: 50px;
+}
+
+.fun-facts-container,
+.calendar-events-container {
+  flex-basis: 50%;
+  margin-top: 40px;
+}
+
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+.text-container {
+    text-align: center;
+}

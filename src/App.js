@@ -1,11 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
+import { createRoot } from 'react-dom';
 import './App.css';
 import devLogo from './assets/DevLogo.png';
 
 import Home from './pages/Home';
 import Comparison from './pages/Comparison';
 import Timeline from './pages/Timeline';
+import HorizonsData from './pages/HorizonsData';
+
+const root = document.getElementById('root');
+
+const existingRoot = root._reactRootContainer ? root._reactRootContainer._internalRoot : createRoot(root);
 
 function App() {
   return (
@@ -29,7 +35,7 @@ function App() {
           </ul>
         </nav>
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/comparison" element={<Comparison />} />
           <Route path="/timeline" element={<Timeline />} />
         </Routes>
@@ -37,5 +43,7 @@ function App() {
     </Router>
   );
 }
+
+existingRoot.render(<App />);
 
 export default App;

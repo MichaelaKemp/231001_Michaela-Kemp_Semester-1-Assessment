@@ -33,7 +33,6 @@ const Comparison = () => {
           return null;
         })}
       </div>
-      <h2>Celestial Bodies</h2>
       <HorizonsData onSelect={handleSelect} showButton={!comparisonStarted} />
     </div>
   );

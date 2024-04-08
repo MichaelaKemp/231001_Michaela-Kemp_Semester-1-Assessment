@@ -52,3 +52,19 @@ p {
 .text-container {
     text-align: center;
 }
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 40%; /* Adjust width of each card */
+    margin: 10px;
+    padding: 20px;
+    color: #ffffff; /* White text color */
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 10px;
+    cursor: pointer;
+    float: left;
+}

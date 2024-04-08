@@ -14,6 +14,7 @@ const Comparison = () => {
   };
 
   const compareBodies = () => {
+    // Your comparison logic here
     setComparisonStarted(true);
   };
 
@@ -22,17 +23,18 @@ const Comparison = () => {
       <h2>Comparison Page</h2>
       <button onClick={compareBodies} disabled={selectedBodies.length !== 2}>Compare</button>
       {comparisonStarted && (
-        <>
-          <h2>Selected Bodies</h2>
-          <div className="selected-bodies">
-            {selectedBodies.map((bodyName, index) => (
-              <div key={index}>{bodyName}</div>
-            ))}
-          </div>
-        </>
+        <h2>Selected Bodies</h2>
       )}
+      <div className="comparison-bodies">
+        {Object.keys(HorizonsData).map((bodyName, index) => {
+          if (selectedBodies.includes(bodyName)) {
+            return <div key={index}>{bodyName}</div>;
+          }
+          return null;
+        })}
+      </div>
       <h2>Celestial Bodies</h2>
-      {!comparisonStarted && <HorizonsData onSelect={handleSelect} showButton={true} />}
+      <HorizonsData onSelect={handleSelect} showButton={!comparisonStarted} />
     </div>
   );
 }

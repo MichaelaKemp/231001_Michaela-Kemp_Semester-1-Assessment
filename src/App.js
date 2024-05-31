@@ -32,12 +32,16 @@ function App() {
             <li>
               <NavLink to="/timeline" activeClassName="active">Timeline</NavLink>
             </li>
+            <li>
+              <NavLink to="/horizonsdata" activeClassName="active">Data</NavLink>
+            </li>
           </ul>
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/comparison" element={<Comparison />} />
           <Route path="/timeline" element={<Timeline />} />
+          <Route path="/horizonsdata" element={<HorizonsData />} />
         </Routes>
       </div>
     </Router>

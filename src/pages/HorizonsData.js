@@ -58,7 +58,6 @@ export const extractParameters = (result) => {
             console.log('ROT= end index:', rotEndIndex);
 
             if (!rotationalPeriodSet) {
-                parameters['Rotational Period'] = value;
                 rotationalPeriodSet = true;
             } else {
                 const radIndex = line.indexOf('RAD=');
@@ -125,7 +124,6 @@ function HorizonsData({ onSelect, showButton }) {
                         <p>Date last seen: {extractParameters(result)['Date last seen']}</p>
                         <p>Inclination: {extractParameters(result).Inclination}</p>
                         <p>Orbital Period: {extractParameters(result)['Orbital Period']}</p>
-                        <p>Rotational Period: {extractParameters(result)['Rotational Period']}</p>
                         <p>Eccentricity: {extractParameters(result).Eccentricity}</p>
                         <p>Semi-Major Axis: {extractParameters(result)['Semi-Major Axis']}</p>
                         <p>Radius: {extractParameters(result).Radius}</p>

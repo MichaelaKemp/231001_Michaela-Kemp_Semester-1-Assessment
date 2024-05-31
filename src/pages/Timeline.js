@@ -1,135 +1,140 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Chart from 'chart.js/auto';
-import { fetchHorizonsData, extractParameters } from './HorizonsData';
-import 'chartjs-adapter-moment'; 
+import React, { useState, useEffect } from 'react';
+import { Line } from 'react-chartjs-2';
+import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, TimeScale, Title, Tooltip, Legend, PointElement } from 'chart.js';
+import 'chartjs-adapter-date-fns';
+import HorizonsData, { extractParameters, fetchHorizonsData } from './HorizonsData';
 
-function Timeline() {
-    const [horizonsData, setHorizonsData] = useState([]);
+ChartJS.register(
+  LineElement,
+  CategoryScale,
+  LinearScale,
+  TimeScale,
+  Title,
+  Tooltip,
+  Legend,
+  PointElement
+);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const fetchedData = await fetchHorizonsData();
-                const processedData = fetchedData.map(result => extractParameters(result));
-                setHorizonsData(processedData);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
+const parseCustomDate = (dateString) => {
+  const [datePart, timePart] = dateString.split('_');
+  const [year, month, day] = datePart.split('-');
+  const months = {
+    Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+    Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+  };
+  const monthIndex = months[month];
+  if (monthIndex === undefined) {
+    return null;
+  }
+  return new Date(Date.UTC(year, monthIndex, day, ...timePart.split(':')));
+};
 
-        fetchData();
-    }, []);
+const TimelinePage = () => {
+  const [data, setData] = useState([]);
+  const [selectedBodies, setSelectedBodies] = useState([]);
+  const [chartData, setChartData] = useState(null);
 
-    useEffect(() => {
-      const drawChart = () => {
-        if (horizonsData.length > 0) {
-          const processedData = horizonsData.map(entry => {
-            const dateTime = entry["Date last seen"].split('_');
-            const date = new Date(dateTime[0]);
-            const time = Date.parse(date.toDateString() + " " + dateTime[1]);
-            const hours = new Date(time).getHours();
-            const minutes = new Date(time).getMinutes();
-            const timeValue = hours * 60 + minutes;
-            
-            // Convert the date to a string format that Chart.js can handle
-            const dateString = date.toISOString().split('T')[0];
-      
-            return { ...entry, date: dateString, time: timeValue };
-          });
-      
-          console.log("Processed Data:", processedData);
-      
-          const chartData = {
-            datasets: [{
-              label: 'Date last seen',
-              data: processedData.map(parameters => ({
-                x: parameters['date'],
-                y: parameters['time']
-              })),
-              borderColor: 'rgb(75, 192, 192)',
-              tension: 0.1
-            }]
-          };
-      
-          console.log("ChartData:", chartData);
-      
-          const ctx = document.getElementById('lineChartCanvas');
-          if (ctx) {
-            const previousChart = Chart.getChart(ctx);
-            if (previousChart) {
-              previousChart.destroy();
-            }
-      
-            new Chart(ctx, {
-              type: 'line',
-              data: chartData,
-              options: {
-                scales: {
-                  x: {
-                    type: 'time',
-                    position: 'bottom',
-                    time: {
-                      unit: 'day',
-                      displayFormats: {
-                        day: 'MMM d, yyyy'
-                      }
-                    },
-                    title: {
-                      display: true,
-                      text: 'Date Last Seen'
-                    }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedData = await fetchHorizonsData();
+        const processedData = fetchedData.map(result => extractParameters(result));
+        setData(processedData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (data.length > 0 && selectedBodies.length > 0) {
+      const filteredData = data.filter(body => selectedBodies.includes(body.Name));
+      const chartDataPoints = filteredData.map(body => {
+        const date = parseCustomDate(body['Date last seen']);
+        return date ? { x: date, y: body.Name } : null;
+      }).filter(point => point !== null);
+
+      setChartData({
+        datasets: [
+          {
+            label: 'Last Seen Date',
+            data: chartDataPoints,
+            fill: false,
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1,
+            pointBackgroundColor: 'rgba(75, 192, 192, 1)'
+          }
+        ]
+      });
+    } else {
+      setChartData(null); // Clear chart data when no bodies are selected
+    }
+  }, [data, selectedBodies]);
+
+  const handleBodyChange = (event) => {
+    const bodyName = event.target.value;
+    if (event.target.checked) {
+      setSelectedBodies([...selectedBodies, bodyName]);
+    } else {
+      setSelectedBodies(selectedBodies.filter(body => body !== bodyName));
+    }
+  };
+
+  return (
+    <div>
+      <h1>Timeline Page</h1>
+      <div>
+        <h2>Select Celestial Bodies</h2>
+        {data.map(body => (
+          <div key={body.Name}>
+            <input
+              type="checkbox"
+              id={body.Name}
+              value={body.Name}
+              checked={selectedBodies.includes(body.Name)}
+              onChange={handleBodyChange}
+            />
+            <label htmlFor={body.Name}>{body.Name}</label>
+          </div>
+        ))}
+      </div>
+      {chartData ? (
+        <div>
+          <h2>Last Seen Dates</h2>
+          <Line 
+            data={chartData} 
+            options={{ 
+              responsive: true,
+              scales: {
+                x: {
+                  type: 'time',
+                  time: {
+                    unit: 'day'
                   },
-                  y: {
-                    type: 'linear',
-                    title: {
-                      display: true,
-                      text: 'Time Seen (HH:mm)'
-                    },
-                    min: 0,
-                    max: 1440,
-                    ticks: {
-                      callback: function(value) {
-                        const hours = Math.floor(value / 60);
-                        const minutes = value % 60;
-                        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-                      }
-                    }
+                  title: {
+                    display: true,
+                    text: 'Date'
                   }
                 },
-                plugins: {
-                  tooltip: {
-                      callbacks: {
-                          label: function(context) {
-                              const value = context.parsed.y;
-                                    const hours = Math.floor(value / 60);
-                                    const minutes = value % 60;
-                                    const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-
-                                    const date = new Date(context.parsed.x);
-                                    const dateString = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-
-                                    return `Date: ${dateString}, Time: ${formattedTime}`;
-                          }
-                          
-                      }
+                y: {
+                  type: 'category',
+                  labels: selectedBodies,
+                  title: {
+                    display: true,
+                    text: 'Celestial Body'
                   }
+                }
               }
-          }
-      });
-  }
-}
-};
-            
-      
-      drawChart();
-      }, [horizonsData]);
-      
-      return (
-        <div>
-          <h2>Timeline</h2>
-          <canvas id="lineChartCanvas"></canvas>
+            }} 
+          />
         </div>
-      );
-}
+      ) : (
+        <p>{data.length === 0 ? "Loading..." : "No data to display"}</p>
+      )}
+    </div>
+  );
+};
 
-export default Timeline;
+export default TimelinePage;

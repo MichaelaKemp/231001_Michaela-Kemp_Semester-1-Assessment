@@ -1,70 +1,263 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: 'Roboto', sans-serif;
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
 }
 
-.logo-container {
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
   text-align: center;
+}
+
+/* Hero section */
+.hero {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 4em;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.5em;
+  margin: 10px 0 0;
+}
+
+/* Main content */
+main {
+  padding: 20px;
+}
+
+/* About section */
+.about {
+  margin: 40px 0;
+}
+
+.about h2 {
+  font-size: 2em;
   margin-bottom: 20px;
 }
 
-.logo-img {
-  width: 200px;
+/* Charts section */
+.charts-section {
+  margin: 40px 0;
 }
 
-.content-container {
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Ensure charts wrap on smaller screens */
+}
+
+.chart-container {
+  flex: 1;
+  min-width: 300px; /* Ensure charts don't get too narrow on smaller screens */
+  max-width: 33%; /* Ensure charts take up a third of the container width */
+}
+
+.chart-container h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Image of the day section */
+.image-of-the-day-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.news-and-image {
+  display: flex;
+  width: 100%;
+}
+
+.news-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.news-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.news-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 70%;
+}
+
+.news-card {
+  background-color: #222222;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+  height: calc(50% - 10px); /* Ensure the cards are smaller */
+}
+
+.news-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* Image container */
+.image-container {
+  flex: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.image-container h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.daily-image {
+  width: 100%;
+  height: 50vh; /* Make the image smaller */
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.info-card {
+  position: absolute;
+  bottom: 10px; /* Adjust this value to move the card down */
+  right: -20px; /* Adjust this value to move the card further to the right */
+  background-color: #222222;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  text-align: left;
+}
+
+.info-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.info-card a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.info-card a:hover {
+  text-decoration: underline;
+}
+
+/* More stories section */
+.more-stories {
+  margin-bottom: 40px;
+}
+
+.more-stories h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.stories-grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
 }
 
-.image-container {
-  margin-left: 20px;
+.story-card {
+  background-color: #222222;
+  padding: 20px;
+  border-radius: 8px;
+  width: 45%;
 }
 
-.celestial-image {
-  width: 100%;
-  max-width: 250px;
-  height: auto;
-  border-radius: 10px;
-  float: left;
-  margin-right: 50px;
+.story-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
-.fun-facts-container,
+/* Fun facts section */
+.fun-facts-container {
+  background-color: #111111;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.fun-facts-container h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+/* Calendar events section */
 .calendar-events-container {
-  flex-basis: 50%;
-  margin-top: 40px;
+  background-color: #111111;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
-h1, h2, h3 {
-  font-family: 'Merriweather', serif;
+.calendar-events-container h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-p {
-  font-family: 'Roboto', sans-serif;
+/* Footer styles */
+.footer {
+  background-color: #111111;
+  color: #cccccc;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #333333;
 }
 
-.text-container {
-    text-align: center;
+.footer a {
+  color: #cccccc;
+  margin: 0 10px;
+  text-decoration: none;
 }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.card {
-    width: 40%; /* Adjust width of each card */
-    margin: 10px;
-    padding: 20px;
-    color: #ffffff; /* White text color */
-    border: 1px solid #ffffff; /* White border */
-    border-radius: 10px;
-    cursor: pointer;
-    float: left;
+.footer a:hover {
+  text-decoration: underline;
 }

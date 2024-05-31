@@ -1,0 +1,74 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Hero section */
+  .hero {
+    background-image: url('/src/assets/MilkyWay.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+  }
+  
+  /* Main content */
+  main {
+    padding: 20px;
+  }
+  
+  /* Select bodies section */
+  .select-bodies {
+    margin-bottom: 30px;
+  }
+  
+  .select-bodies h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .body-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .body-item {
+    margin-right: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .body-item input {
+    margin-right: 5px;
+  }
+  
+  /* Chart section */
+  .chart-section {
+    margin-top: 30px;
+  }
+  
+  .chart-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #111111;
+    color: #cccccc;
+    padding: 20px;
+    text-align: center;
+  }
+  

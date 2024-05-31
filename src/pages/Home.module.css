@@ -84,6 +84,20 @@ main {
   margin-top: 50px;
 }
 
+.chartContainerPie {
+  flex: 1;
+  min-width: 300px;
+  max-width: 32%;
+  max-height: 350px;
+  padding-bottom: 100px;
+  margin-top: 20px;
+}
+
+.chartContainerPie h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
 .chartContainer h3 {
   font-size: 1.5em;
   margin-bottom: 20px;

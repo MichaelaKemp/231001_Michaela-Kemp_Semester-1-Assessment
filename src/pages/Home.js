@@ -1,6 +1,5 @@
 import React from 'react';
 import { Line, Bar, Pie } from 'react-chartjs-2';
-import landImage from '../assets/Landing_Page_Image.jpg';
 import landingPageImage from '../assets/Landing_Page_Image.jpg';
 import milkyWayImage from '../assets/MilkyWay.jpg';
 import styles from './Home.module.css';
@@ -75,7 +74,7 @@ const Home = () => {
               <h3>Exoplanet Discoveries</h3>
               <Line data={exoplanetDiscoveriesData} />
             </div>
-            <div className={styles.chartContainer}>
+            <div className={styles.chartContainerPie}>
               <h3>Star Classification</h3>
               <Pie data={starClassificationData} />
             </div>

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
 /* General styles */
 body {
   font-family: 'Arial', sans-serif;
@@ -12,6 +15,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
 }
 
@@ -20,7 +24,7 @@ body {
   background-size: cover;
   background-position: center;
   position: relative;
-  height: 100vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +39,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 4em;
+  font-size: 3em;
   margin: 0;
 }
 
@@ -60,30 +64,33 @@ main {
 }
 
 /* Charts section */
-.charts-section {
+.chartsSection {
   margin: 40px 0;
 }
 
-.charts-container {
+.chartsContainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
-  flex-wrap: wrap; /* Ensure charts wrap on smaller screens */
 }
 
-.chart-container {
+.chartContainer {
   flex: 1;
-  min-width: 300px; /* Ensure charts don't get too narrow on smaller screens */
-  max-width: 33%; /* Ensure charts take up a third of the container width */
+  min-width: 300px;
+  max-width: 32%;
+  max-height: 300px;
+  padding-bottom: 50px;
+  margin-top: 50px;
 }
 
-.chart-container h3 {
+.chartContainer h3 {
   font-size: 1.5em;
   margin-bottom: 20px;
 }
 
 /* Image of the day section */
-.image-of-the-day-section {
+.imageOfTheDaySection {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -91,66 +98,59 @@ main {
   position: relative;
 }
 
-.news-and-image {
+.newsAndImage {
   display: flex;
   width: 100%;
 }
 
-.news-section {
+.newsSection {
   flex: 1;
   margin-right: 20px;
 }
 
-.news-section h2 {
+.newsSection h2 {
   font-size: 2em;
   margin-bottom: 20px;
 }
 
-.news-cards {
+.newsCards {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 70%;
 }
 
-.news-card {
+.newsCard {
   background-color: #222222;
   padding: 20px;
   border-radius: 8px;
   flex: 1;
-  height: calc(50% - 10px); /* Ensure the cards are smaller */
 }
 
-.news-card h3 {
+.newsCard h3 {
   font-size: 1.5em;
   margin-bottom: 10px;
 }
 
 /* Image container */
-.image-container {
+.imageContainer {
+  margin-left: 20px;
   flex: 2;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 
-.image-container h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-.daily-image {
+.dailyImage {
   width: 100%;
-  height: 50vh; /* Make the image smaller */
-  border-radius: 8px;
+  max-width: 100%;
+  height: 450px;
+  border-radius: 10px;
+  margin-bottom: 20px;
   object-fit: cover;
 }
 
-.info-card {
+.infoCard {
   position: absolute;
-  bottom: 10px; /* Adjust this value to move the card down */
-  right: -20px; /* Adjust this value to move the card further to the right */
+  bottom: 10px;
+  right: -100px;
   background-color: #222222;
   padding: 20px;
   border-radius: 8px;
@@ -159,63 +159,63 @@ main {
   text-align: left;
 }
 
-.info-card h3 {
+.infoCard h3 {
   font-size: 1.5em;
   margin-bottom: 10px;
 }
 
-.info-card p {
+.infoCard p {
   font-size: 1em;
   margin-bottom: 10px;
 }
 
-.info-card a {
+.infoCard a {
   color: #1e90ff;
   text-decoration: none;
 }
 
-.info-card a:hover {
+.infoCard a:hover {
   text-decoration: underline;
 }
 
 /* More stories section */
-.more-stories {
+.moreStories {
   margin-bottom: 40px;
 }
 
-.more-stories h2 {
+.moreStories h2 {
   font-size: 2em;
   margin-bottom: 20px;
 }
 
-.stories-grid {
+.storiesGrid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 20px;
 }
 
-.story-card {
+.storyCard {
   background-color: #222222;
   padding: 20px;
   border-radius: 8px;
   width: 45%;
 }
 
-.story-card h3 {
+.storyCard h3 {
   font-size: 1.5em;
   margin-bottom: 10px;
 }
 
 /* Fun facts section */
-.fun-facts-container {
+.funFactsContainer {
   background-color: #111111;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
-.fun-facts-container h2 {
+.funFactsContainer h2 {
   font-size: 2em;
   margin-bottom: 20px;
 }
@@ -231,14 +231,14 @@ li {
 }
 
 /* Calendar events section */
-.calendar-events-container {
+.calendarEventsContainer {
   background-color: #111111;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
-.calendar-events-container h2 {
+.calendarEventsContainer h2 {
   font-size: 2em;
   margin-bottom: 20px;
 }

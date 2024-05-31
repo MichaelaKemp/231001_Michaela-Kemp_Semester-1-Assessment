@@ -1,9 +1,10 @@
 import React from 'react';
 import { Line, Bar, Pie } from 'react-chartjs-2';
-import devLogo from '../assets/DevLogo.png';
+import landImage from '../assets/Landing_Page_Image.jpg';
 import landingPageImage from '../assets/Landing_Page_Image.jpg';
 import milkyWayImage from '../assets/MilkyWay.jpg';
-import './Home.css';
+import styles from './Home.module.css';
+import Footer from '../components/Footer';
 
 const planetComparisonData = {
   labels: ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'],
@@ -51,90 +52,90 @@ const starClassificationData = {
 
 const Home = () => {
   return (
-    <div className="container">
-      <header className="hero" style={{ backgroundImage: `url(${landingPageImage})` }}>
-        <div className="overlay">
+    <div className={styles.container}>
+      <header className={styles.hero} style={{ backgroundImage: `url(${landingPageImage})` }}>
+        <div className={styles.overlay}>
           <h1>Welcome to Orbiting Eyes</h1>
-          <p>Explore the universe from your own home</p>
+          <p className={styles.homeDescription}>Orbiting Eyes is your portal to explore the mysteries of celestial bodies. Powered by NASA's Horizon API, we bring you the latest information on planets, stars, and more. Dive into our comparison tool or journey through the cosmic timeline to uncover the wonders of the universe.</p>
         </div>
       </header>
       <main>
-        <section className="about">
+        <section className={styles.about}>
           <h2>What Does Orbiting Eyes Do?</h2>
           <p>Orbiting Eyes provides a unique portal to explore the mysteries of celestial bodies. By leveraging NASA's Horizon API, we bring the latest information about planets, stars, and other celestial phenomena directly to you. Our platform allows you to compare different celestial bodies, track their positions, and dive deep into the cosmic timeline to uncover the wonders of the universe. Join us on this journey through space as we aim to educate and inspire curiosity about the cosmos.</p>
         </section>
-        <section className="charts-section">
+        <section className={styles.chartsSection}>
           <h2>Interesting Charts</h2>
-          <div className="charts-container">
-            <div className="chart-container">
+          <div className={styles.chartsContainer}>
+            <div className={styles.chartContainer}>
               <h3>Planet Comparison</h3>
               <Bar data={planetComparisonData} />
             </div>
-            <div className="chart-container">
+            <div className={styles.chartContainer}>
               <h3>Exoplanet Discoveries</h3>
               <Line data={exoplanetDiscoveriesData} />
             </div>
-            <div className="chart-container">
+            <div className={styles.chartContainer}>
               <h3>Star Classification</h3>
               <Pie data={starClassificationData} />
             </div>
           </div>
         </section>
-        <section className="image-of-the-day-section">
-          <div className="news-and-image">
-            <div className="news-section">
+        <section className={styles.imageOfTheDaySection}>
+          <div className={styles.newsAndImage}>
+            <div className={styles.newsSection}>
               <h2>Recent News</h2>
-              <div className="news-cards">
-                <div className="news-card">
+              <div className={styles.newsCards}>
+                <div className={styles.newsCard}>
                   <h3>NASA Discovers New Exoplanet</h3>
                   <p>NASA's latest discovery of an exoplanet in the habitable zone...</p>
                 </div>
-                <div className="news-card">
+                <div className={styles.newsCard}>
                   <h3>Launch of Artemis I</h3>
                   <p>Artemis I, NASA's next mission to the Moon, is scheduled to launch...</p>
                 </div>
               </div>
             </div>
-            <div className="image-container">
+            <div className={styles.imageContainer}>
               <h2>Image of the Day</h2>
-              <img src={milkyWayImage} alt="Milky Way Galaxy" className="daily-image" />
-              <div className="info-card">
+              <img src={milkyWayImage} alt="Milky Way Galaxy" className={styles.dailyImage} />
+              <div className={styles.infoCard}>
                 <h3>New Images from the Hubble Telescope</h3>
                 <p>The Hubble Telescope has captured stunning new images of distant galaxies, providing valuable insights into the early universe.</p>
               </div>
             </div>
           </div>
         </section>
-        <section className="more-stories">
+        <section className={styles.moreStories}>
           <h2>More Stories</h2>
-          <div className="stories-grid">
-            <div className="story-card">
+          <div className={styles.storiesGrid}>
+            <div className={styles.storyCard}>
               <h3>NASA Scientists see Asteroid through Robotic Eyes</h3>
             </div>
-            <div className="story-card">
+            <div className={styles.storyCard}>
               <h3>NASA Runs First-Ever Test of New Jet Engine Tech</h3>
             </div>
-            <div className="story-card">
+            <div className={styles.storyCard}>
               <h3>NASA Administrator Statement on ESA’s Commitment to Space Station</h3>
             </div>
-            <div className="story-card">
+            <div className={styles.storyCard}>
               <h3>Modern Figures: NASA’s Past and Future</h3>
             </div>
-            <div className="story-card">
+            <div className={styles.storyCard}>
               <h3>TIME: 15 Years Exploring Our Interface to Space</h3>
             </div>
-            <div className="story-card">
+            <div className={styles.storyCard}>
               <h3>Cassini Beams Back First Images from New Orbit</h3>
             </div>
-            <div className="story-card">
+            <div className={styles.storyCard}>
               <h3>Curiosity Rover Team Examining New Drill Hiatus</h3>
             </div>
-            <div className="story-card">
+            <div className={styles.storyCard}>
               <h3>Interstellar trailer</h3>
             </div>
           </div>
         </section>
-        <section className="fun-facts-container">
+        <section className={styles.funFactsContainer}>
           <h2>Fun Facts about Celestial Bodies</h2>
           <ul>
             <li>The Sun contains 99.8% of the mass in the entire solar system.</li>
@@ -142,7 +143,7 @@ const Home = () => {
             <li>The Great Red Spot on Jupiter is a storm that has been raging for at least 400 years.</li>
           </ul>
         </section>
-        <section className="calendar-events-container">
+        <section className={styles.calendarEventsContainer}>
           <h2>Calendar Events for 2024</h2>
           <ul>
             <li>April 8-16: Lyrid Meteor Shower</li>
@@ -151,16 +152,9 @@ const Home = () => {
           </ul>
         </section>
       </main>
-      <footer className="footer">
-        <p>&copy; 2024 Orbiting Eyes. All Rights Reserved.</p>
-        <p>
-          <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer">GitHub</a> | 
-          <a href="https://twitter.com/your-twitter" target="_blank" rel="noopener noreferrer">Twitter</a> | 
-          <a href="mailto:contact@orbitingeyes.com">Contact Us</a>
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
-}
+};
 
 export default Home;

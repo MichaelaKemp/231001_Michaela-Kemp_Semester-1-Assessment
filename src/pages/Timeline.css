@@ -7,68 +7,111 @@ body {
     padding: 0;
   }
   
+  /* Container styles */
+  .container {
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    }
+  
   /* Hero section */
   .hero {
-    background-image: url('/src/assets/MilkyWay.jpg');
     background-size: cover;
     background-position: center;
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 100px 20px;
+    color: white;
+    width: 100%;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
   }
   
   .hero h1 {
     font-size: 3em;
-    margin-bottom: 10px;
+    margin: 0;
   }
   
   .hero p {
-    font-size: 1.2em;
+    font-size: 1.5em;
+    margin: 10px 0 0;
   }
   
   /* Main content */
   main {
     padding: 20px;
+    width: 100%;
   }
   
-  /* Select bodies section */
-  .select-bodies {
-    margin-bottom: 30px;
+  /* Timeline content section */
+  .timeline-content {
+    margin: 40px 0;
+    width: 100%;
   }
   
-  .select-bodies h2 {
+  .timeline-content h2 {
     font-size: 2em;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   
-  .body-list {
+  .body-selection {
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
   }
   
-  .body-item {
-    margin-right: 15px;
-    margin-bottom: 10px;
+  .body-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   
-  .body-item input {
-    margin-right: 5px;
+  .chart-container {
+    margin: 40px 0;
+    width: 100%; /* Ensure the chart container spans the full width */
   }
   
-  /* Chart section */
-  .chart-section {
-    margin-top: 30px;
+  .chart-wrapper {
+    height: 80vh; /* Ensure the chart has sufficient height */
+    width: 100%; /* Ensure the chart spans the full width */
   }
   
-  .chart-section h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
+  .chart-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
   }
   
-  /* Footer */
-  footer {
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  /* Footer styles */
+  .footer {
     background-color: #111111;
     color: #cccccc;
     padding: 20px;
     text-align: center;
+    border-top: 1px solid #333333;
+  }
+  
+  .footer a {
+    color: #cccccc;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
   }
   

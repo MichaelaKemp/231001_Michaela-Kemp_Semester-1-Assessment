@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, TimeScale, Title, Tooltip, Legend, PointElement } from 'chart.js';
 import 'chartjs-adapter-date-fns';
-import HorizonsData, { extractParameters, fetchHorizonsData } from './HorizonsData';
+import { extractParameters, fetchHorizonsData } from './HorizonsData';
+import landingPageImage from '../assets/Landing_Page_Image.jpg';
+import './Timeline.css';
+import Footer from '../components/Footer';
 
 ChartJS.register(
   LineElement,
@@ -83,56 +86,70 @@ const TimelinePage = () => {
   };
 
   return (
-    <div>
-      <h1>Timeline Page</h1>
-      <div>
-        <h2>Select Celestial Bodies</h2>
-        {data.map(body => (
-          <div key={body.Name}>
-            <input
-              type="checkbox"
-              id={body.Name}
-              value={body.Name}
-              checked={selectedBodies.includes(body.Name)}
-              onChange={handleBodyChange}
-            />
-            <label htmlFor={body.Name}>{body.Name}</label>
-          </div>
-        ))}
-      </div>
-      {chartData ? (
-        <div>
-          <h2>Last Seen Dates</h2>
-          <Line 
-            data={chartData} 
-            options={{ 
-              responsive: true,
-              scales: {
-                x: {
-                  type: 'time',
-                  time: {
-                    unit: 'day'
-                  },
-                  title: {
-                    display: true,
-                    text: 'Date'
-                  }
-                },
-                y: {
-                  type: 'category',
-                  labels: selectedBodies,
-                  title: {
-                    display: true,
-                    text: 'Celestial Body'
-                  }
-                }
-              }
-            }} 
-          />
+    <div className="container">
+      <header className="hero" style={{ backgroundImage: `url(${landingPageImage})` }}>
+        <div className="overlay">
+          <h1>Celestial Timeline</h1>
+          <p>Explore the latest observations of celestial bodies</p>
         </div>
-      ) : (
-        <p>{data.length === 0 ? "Loading..." : "No data to display"}</p>
-      )}
+      </header>
+      <main>
+        <section className="timeline-content">
+          <h2>Select Celestial Bodies</h2>
+          <div className="body-selection">
+            {data.map(body => (
+              <div key={body.Name} className="body-checkbox">
+                <input
+                  type="checkbox"
+                  id={body.Name}
+                  value={body.Name}
+                  checked={selectedBodies.includes(body.Name)}
+                  onChange={handleBodyChange}
+                />
+                <label htmlFor={body.Name}>{body.Name}</label>
+              </div>
+            ))}
+          </div>
+          {chartData ? (
+            <div className="chart-container">
+              <h2>Last Seen Dates</h2>
+              <div className="chart-wrapper">
+                <Line 
+                  data={chartData} 
+                  options={{ 
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                      x: {
+                        type: 'time',
+                        time: {
+                          unit: 'day'
+                        },
+                        title: {
+                          display: true,
+                          text: 'Date'
+                        }
+                      },
+                      y: {
+                        type: 'category',
+                        labels: selectedBodies,
+                        title: {
+                          display: true,
+                          text: 'Celestial Body'
+                        }
+                      }
+                    }
+                  }} 
+                  style={{ width: '100%', height: '100%' }}
+                />
+              </div>
+            </div>
+          ) : (
+            <p>{data.length === 0 ? "Loading..." : "No data to display"}</p>
+          )}
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 };

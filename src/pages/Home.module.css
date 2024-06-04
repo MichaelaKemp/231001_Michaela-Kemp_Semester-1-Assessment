@@ -1,7 +1,7 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 
-/* General styles */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #0d0d0d;
@@ -10,7 +10,6 @@ body {
   padding: 0;
 }
 
-/* Container styles */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -19,7 +18,6 @@ body {
   text-align: center;
 }
 
-/* Hero section */
 .hero {
   background-size: cover;
   background-position: center;
@@ -48,12 +46,10 @@ body {
   margin: 10px 0 0;
 }
 
-/* Main content */
 main {
   padding: 20px;
 }
 
-/* About section */
 .about {
   margin: 40px 0;
 }
@@ -63,7 +59,6 @@ main {
   margin-bottom: 20px;
 }
 
-/* Charts section */
 .chartsSection {
   margin: 40px 0;
 }
@@ -103,7 +98,6 @@ main {
   margin-bottom: 20px;
 }
 
-/* Image of the day section */
 .imageOfTheDaySection {
   display: flex;
   justify-content: space-between;
@@ -138,6 +132,12 @@ main {
   padding: 20px;
   border-radius: 8px;
   flex: 1;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.newsCard:hover {
+  transform: scale(1.05);
 }
 
 .newsCard h3 {
@@ -145,7 +145,27 @@ main {
   margin-bottom: 10px;
 }
 
-/* Image container */
+.newsCard p {
+  margin-bottom: 10px;
+}
+
+.moreDetails {
+  display: none;
+  margin-top: 10px;
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.newsCard:hover .moreDetails,
+.storyCard:hover .moreDetails,
+.infoCard:hover .moreDetails {
+  display: block;
+}
+
+.moreDetails:hover {
+  text-decoration: underline;
+}
+
 .imageContainer {
   margin-left: 20px;
   flex: 2;
@@ -163,8 +183,8 @@ main {
 
 .infoCard {
   position: absolute;
-  bottom: 10px;
-  right: -100px;
+  bottom: 1px;
+  right: -10px;
   background-color: #222222;
   padding: 20px;
   border-radius: 8px;
@@ -188,11 +208,14 @@ main {
   text-decoration: none;
 }
 
+.infoCard:hover .moreDetails {
+  display: block;
+}
+
 .infoCard a:hover {
   text-decoration: underline;
 }
 
-/* More stories section */
 .moreStories {
   margin-bottom: 40px;
 }
@@ -214,6 +237,12 @@ main {
   padding: 20px;
   border-radius: 8px;
   width: 45%;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.storyCard:hover {
+  transform: scale(1.05);
 }
 
 .storyCard h3 {
@@ -221,7 +250,21 @@ main {
   margin-bottom: 10px;
 }
 
-/* Fun facts section */
+.storyCard .moreDetails {
+  display: none;
+  margin-top: 10px;
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.storyCard:hover .moreDetails {
+  display: block;
+}
+
+.storyCard .moreDetails:hover {
+  text-decoration: underline;
+}
+
 .funFactsContainer {
   background-color: #111111;
   padding: 20px;
@@ -244,7 +287,6 @@ li {
   margin: 10px 0;
 }
 
-/* Calendar events section */
 .calendarEventsContainer {
   background-color: #111111;
   padding: 20px;
@@ -257,7 +299,6 @@ li {
   margin-bottom: 20px;
 }
 
-/* Footer styles */
 .footer {
   background-color: #111111;
   color: #cccccc;

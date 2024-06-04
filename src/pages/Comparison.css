@@ -1,0 +1,103 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .hero {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    width: 100%;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .hero h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+  
+  .hero p {
+    font-size: 1.5em;
+    margin: 10px 0 0;
+  }
+  
+  main {
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .comparison-content {
+    margin: 40px 0;
+    width: 100%;
+  }
+  
+  .selector {
+    margin-bottom: 20px;
+  }
+  
+  .selector label {
+    margin-right: 10px;
+  }
+  
+  .charts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .chart-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .chart-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+  }
+  
+  .chart-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .footer {
+    background-color: #111111;
+    color: #cccccc;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #333333;
+  }
+  
+  .footer a {
+    color: #cccccc;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  

@@ -88,10 +88,12 @@ const Home = () => {
                 <div className={styles.newsCard}>
                   <h3>NASA Discovers New Exoplanet</h3>
                   <p>NASA's latest discovery of an exoplanet in the habitable zone...</p>
+                  <a href="https://science.nasa.gov/universe/exoplanets/discovery-alert-two-new-planets-found-by-ai/" className={styles.moreDetails}>More Details</a>
                 </div>
                 <div className={styles.newsCard}>
                   <h3>Launch of Artemis I</h3>
                   <p>Artemis I, NASA's next mission to the Moon, is scheduled to launch...</p>
+                  <a href="https://www.nasa.gov/mission/artemis-i/" className={styles.moreDetails}>More Details</a>
                 </div>
               </div>
             </div>
@@ -101,6 +103,7 @@ const Home = () => {
               <div className={styles.infoCard}>
                 <h3>New Images from the Hubble Telescope</h3>
                 <p>The Hubble Telescope has captured stunning new images of distant galaxies, providing valuable insights into the early universe.</p>
+                <a href="https://science.nasa.gov/mission/hubble/hubble-news/" className={styles.moreDetails}>More Details</a>
               </div>
             </div>
           </div>
@@ -110,27 +113,35 @@ const Home = () => {
           <div className={styles.storiesGrid}>
             <div className={styles.storyCard}>
               <h3>NASA Scientists see Asteroid through Robotic Eyes</h3>
+              <a href="https://www.nasa.gov/missions/nasa-scientists-see-asteroid-through-the-eyes-of-a-robot/" className={styles.moreDetails}>More Details</a>
             </div>
             <div className={styles.storyCard}>
               <h3>NASA Runs First-Ever Test of New Jet Engine Tech</h3>
+              <a href="https://www.nasa.gov/aeronautics/nasa-runs-first-ever-test-of-new-jet-engine-tech/" className={styles.moreDetails}>More Details</a>
             </div>
             <div className={styles.storyCard}>
               <h3>NASA Administrator Statement on ESA’s Commitment to Space Station</h3>
+              <a href="https://www.nasa.gov/news-release/nasa-administrator-statement-on-esas-commitment-to-space-station/" className={styles.moreDetails}>More Details</a>
             </div>
             <div className={styles.storyCard}>
               <h3>Modern Figures: NASA’s Past and Future</h3>
+              <a href="https://www.nasa.gov/from-hidden-to-modern-figures/" className={styles.moreDetails}>More Details</a>
             </div>
             <div className={styles.storyCard}>
               <h3>TIME: 15 Years Exploring Our Interface to Space</h3>
+              <a href="https://www.nasa.gov/solar-system/timed-15-years-exploring-our-interface-to-space/" className={styles.moreDetails}>More Details</a>
             </div>
             <div className={styles.storyCard}>
               <h3>Cassini Beams Back First Images from New Orbit</h3>
+              <a href="https://www.jpl.nasa.gov/news/cassini-beams-back-first-images-from-new-orbit" className={styles.moreDetails}>More Details</a>
             </div>
             <div className={styles.storyCard}>
               <h3>Curiosity Rover Team Examining New Drill Hiatus</h3>
+              <a href="https://skyandtelescope.org/astronomy-news/curiosity-rover-in-the-drilling-business-once-again/" className={styles.moreDetails}>More Details</a>
             </div>
             <div className={styles.storyCard}>
               <h3>Interstellar trailer</h3>
+              <a href="https://www.wsj.com/video/film-trailer-interstellar/DAFDB7CE-2CCB-404C-9A78-255974AE76D7" className={styles.moreDetails}>More Details</a>
             </div>
           </div>
         </section>

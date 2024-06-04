@@ -32,9 +32,6 @@ function App() {
             <li>
               <NavLink to="/timeline" activeClassName="active">Timeline</NavLink>
             </li>
-            <li>
-              <NavLink to="/horizonsdata" activeClassName="active">Data</NavLink>
-            </li>
           </ul>
         </nav>
         <Routes>

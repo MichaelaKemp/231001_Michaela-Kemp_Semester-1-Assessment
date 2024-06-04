@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Bar, Pie, Radar } from 'react-chartjs-2';
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend, ArcElement, RadialLinearScale, PointElement, LineElement } from 'chart.js';
-import { fetchHorizonsData, extractParameters } from './HorizonsData'; // Adjust the path as necessary
+import { fetchHorizonsData, extractParameters } from './HorizonsData';
+import comparisonBackgroundImage from '../assets/Landing_Page_Image.jpg';
+import './Comparison.css';
+import Footer from '../components/Footer';
 
 ChartJS.register(
   BarElement,
@@ -104,42 +107,60 @@ const ComparisonPage = () => {
   };
 
   return (
-    <div>
-      <h1>Comparison Page</h1>
-      {data.length > 0 ? (
-        <div>
-          <div>
-            <label>Select First Object: </label>
-            <select onChange={handleFirstObjectChange}>
-              <option value="">Select</option>
-              {data.map(obj => (
-                <option key={obj.Name} value={obj.Name}>{obj.Name}</option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label>Select Second Object: </label>
-            <select onChange={handleSecondObjectChange}>
-              <option value="">Select</option>
-              {data.map(obj => (
-                <option key={obj.Name} value={obj.Name}>{obj.Name}</option>
-              ))}
-            </select>
-          </div>
-          {firstObject && secondObject && (
-            <div>
-              <h2>Orbital Period</h2>
-              <Bar data={generateBarChartData('Orbital Period')} options={{ responsive: true }} />
-              <h2>Inclination</h2>
-              <Pie data={generatePieChartData('Inclination')} options={{ responsive: true }} />
-              <h2>Eccentricity</h2>
-              <Radar data={generateRadarChartData('Eccentricity')} options={{ responsive: true }} />
-            </div>
-          )}
+    <div className="container">
+      <header className="hero" style={{ backgroundImage: `url(${comparisonBackgroundImage})` }}>
+        <div className="overlay">
+          <h1>Celestial Comparison</h1>
+          <p>Compare the attributes of different celestial bodies</p>
         </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+      </header>
+      <main>
+        {data.length > 0 ? (
+          <div className="comparison-content">
+            <div className="selector">
+              <label>Select First Object: </label>
+              <select onChange={handleFirstObjectChange}>
+                <option value="">Select</option>
+                {data.map(obj => (
+                  <option key={obj.Name} value={obj.Name}>{obj.Name}</option>
+                ))}
+              </select>
+            </div>
+            <div className="selector">
+              <label>Select Second Object: </label>
+              <select onChange={handleSecondObjectChange}>
+                <option value="">Select</option>
+                {data.map(obj => (
+                  <option key={obj.Name} value={obj.Name}>{obj.Name}</option>
+                ))}
+              </select>
+            </div>
+            {firstObject && secondObject && (
+              <div className="charts-container">
+                <div className="chart-row">
+                  <div className="chart-container">
+                    <h2>Orbital Period</h2>
+                    <Bar data={generateBarChartData('Orbital Period')} options={{ responsive: true }} />
+                  </div>
+                </div>
+                <div className="chart-row">
+                  <div className="chart-container">
+                    <h2>Inclination</h2>
+                    <Pie data={generatePieChartData('Inclination')} options={{ responsive: true }} />
+                  </div>
+                  <div className="chart-container">
+                    <h2>Eccentricity</h2>
+                    <Radar data={generateRadarChartData('Eccentricity')} options={{ responsive: true }} />
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </main>
+      <Footer />
     </div>
   );
 };

@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Orbiting Eyes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Orbiting Eyes is an application that displays information on celestial bodies using the Horizons API from the NASA website. This project aims to provide users with detailed and up-to-date data about various astronomical objects.
 
-## Available Scripts
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [License](#license)
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+To get started, clone the repository and install the dependencies:
+- git clone https: https://github.com/MichaelaKemp/231001_michaela-kemp_semester-1-assessment.git 
+- cd orbiting-eyes
+- npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run the app in development mode:
+- Copy code
+- npm start
+- Open http://localhost:3000 to view it in your browser. The page will reload when you make changes. You may also see any lint errors in the console.
 
-### `npm test`
+To run tests:
+- Copy code
+- npm test
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To build the app for production:
+- Copy code
+- npm run build
+- This will create an optimized production build in the build folder.
 
-### `npm run build`
+## Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Home Page
+![Home Page 1](src/assets/screenshots/HomePage_01.png)
+![Home Page 2](src/assets/screenshots/HomePage_02.png)
+![Home Page 3](src/assets/screenshots/HomePage_03.png)
+![Home Page 4](src/assets/screenshots/HomePage_04.png)
+![Home Page 5](src/assets/screenshots/HomePage_05.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Comparison Page
+![Comparison Page 1](src/assets/screenshots/ComparisonPage_01.png)
+![Comparison Page 2](src/assets/screenshots/ComparisonPage_02.png)
+![Comparison Page 3](src/assets/screenshots/ComparisonPage_03.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Timeline Page
+![Timeline Page 1](src/assets/screenshots/TimelinePage_01.png)
+![Timeline Page 2](src/assets/screenshots/TimelinePage_02.png)
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Celestial Body Information: Search and view detailed information about celestial bodies.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Horizons API Integration: Fetches data directly from NASA's Horizons API.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+User-Friendly Interface: Intuitive interface designed for easy navigation and data presentation.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

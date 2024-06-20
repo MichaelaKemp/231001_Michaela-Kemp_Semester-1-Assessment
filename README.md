@@ -13,7 +13,7 @@ Orbiting Eyes is an application that displays information on celestial bodies us
 ## Installation
 
 To get started, clone the repository and install the dependencies:
-git clone https: 
+git clone https: https://github.com/MichaelaKemp/231001_michaela-kemp_semester-1-assessment.git 
 cd orbiting-eyes
 npm install
 

@@ -6,6 +6,7 @@ Orbiting Eyes is an application that displays information on celestial bodies us
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
+- [Screenshots](#screenshots)
 - [License](#license)
 
 ## Installation
@@ -30,6 +31,24 @@ To build the app for production:
 - Copy code
 - npm run build
 - This will create an optimized production build in the build folder.
+
+## Screenshots
+
+- Home Page
+![Home Page 1](src/assets/screenshots/HomePage_01.png)
+![Home Page 2](src/assets/screenshots/HomePage_02.png)
+![Home Page 3](src/assets/screenshots/HomePage_03.png)
+![Home Page 4](src/assets/screenshots/HomePage_04.png)
+![Home Page 5](src/assets/screenshots/HomePage_05.png)
+
+- Comparison Page
+![Comparison Page 1](src/assets/screenshots/ComparisonPage_01.png)
+![Comparison Page 2](src/assets/screenshots/ComparisonPage_02.png)
+![Comparison Page 3](src/assets/screenshots/ComparisonPage_03.png)
+
+- Timeline Page
+![Timeline Page 1](src/assets/screenshots/TimelinePage_01.png)
+![Timeline Page 2](src/assets/screenshots/TimelinePage_02.png)
 
 ## Features
 

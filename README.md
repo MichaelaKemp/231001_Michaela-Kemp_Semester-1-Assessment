@@ -52,7 +52,7 @@ To build the app for production:
 
 ## Demo Video
 
-![Demo Video](src/231001_Michaela-Kemp_DV200_DemoVideo.mp4)
+![Demo Video](src/assets/231001_Michaela-Kemp_DV200_DemoVideo.mp4)
 
 ## Features
 

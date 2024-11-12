@@ -50,6 +50,10 @@ To build the app for production:
 ![Timeline Page 1](src/assets/screenshots/TimelinePage_01.png)
 ![Timeline Page 2](src/assets/screenshots/TimelinePage_02.png)
 
+## Demo Video
+
+![Demo Video](231001_Michaela-Kemp_DV200_DemoVideo)
+
 ## Features
 
 Celestial Body Information: Search and view detailed information about celestial bodies.
